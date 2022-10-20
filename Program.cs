@@ -1,8 +1,12 @@
+using PrimerProjecte;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<ICounterService, Add3CounterService>();
+//builder.Services.AddTransient<ICounterService, Add1CounterService>();
 
 var app = builder.Build();
 
